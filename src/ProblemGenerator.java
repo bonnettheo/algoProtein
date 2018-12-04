@@ -1,4 +1,5 @@
 import graph.Node;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import javax.activation.UnsupportedDataTypeException;
 import java.util.ArrayList;
@@ -33,9 +34,31 @@ public class ProblemGenerator {
             for(int j = 0; j < p; j++){
                 Random random = new Random();
                 int rdm = random.nextInt(n);
+                while(C.get(i).contains(nodes.get(rdm))){
+                    random = new Random();
+                    rdm = random.nextInt(n);
+                }
                 C.get(i).add(nodes.get(rdm));
             }
         }
+    }
+
+    public void viewProbleme(){
+        System.out.println("Nodes : {");
+        for (Node n: nodes) {
+            System.out.println("    n : "+n.id + ";");
+        }
+        System.out.println("}");
+        System.out.println();
+        System.out.println("C : {");
+        for (List<Node> Ci : C) {
+            System.out.println("    Ci : {");
+            for (Node n: Ci) {
+                System.out.println("        n : "+n.id + ";");
+            }
+            System.out.println("}");
+        }
+        System.out.println("}");
 
     }
 }

@@ -3,7 +3,7 @@ package graph;
 import java.util.UUID;
 
 public class Node {
-    private UUID id;
+    public UUID id;
     public Node(){
         id = UUID.randomUUID();
     }
