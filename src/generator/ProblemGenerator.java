@@ -1,7 +1,6 @@
-import graph.Node;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+package generator;
 
-import javax.activation.UnsupportedDataTypeException;
+import graph.Node;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -59,6 +58,9 @@ public class ProblemGenerator {
             System.out.println("}");
         }
         System.out.println("}");
+    }
 
+    public List<List<Node>> getC() {
+        return C;
     }
 }
