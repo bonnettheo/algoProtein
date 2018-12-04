@@ -43,7 +43,7 @@ public class ProblemGenerator {
         }
     }
 
-    public void viewProbleme(){
+    public void viewProblem(){
         System.out.println("Nodes : {");
         for (Node n: nodes) {
             System.out.println("    n : "+n.id + ";");
