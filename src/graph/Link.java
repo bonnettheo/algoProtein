@@ -7,7 +7,10 @@ public class Link {
     Node n1;
     Node n2;
     public Link(Node node1, Node node2){
-        if (n1.equals(n2)){
+        if(node1==null || node2==null){
+            throw new NullPointerException();
+        }
+        if (node1.equals(node2)){
             throw new UnsupportedOperationException();
         }
         n1 = node1;
