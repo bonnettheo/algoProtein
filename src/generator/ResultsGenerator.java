@@ -46,7 +46,7 @@ public class ResultsGenerator {
         for (double value : valuesFound){
             moy += value;
         }
-        moy /= valuesFound.size();
+        moy  /= valuesFound.size();
         return moy;
     }
 }

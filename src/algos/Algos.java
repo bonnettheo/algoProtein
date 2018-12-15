@@ -9,10 +9,10 @@ import java.util.List;
 
 abstract public class Algos {
     protected List<Link> links = new ArrayList<>();
-    protected List<List<Node>> C = new ArrayList<>();
+    protected List<List<Node>> Cs = new ArrayList<>();
 
     public Algos(ProblemGenerator pbg){
-        C = pbg.getC();
+        Cs = pbg.getC();
     }
 
     abstract public void computeSolution();

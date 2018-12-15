@@ -17,6 +17,11 @@ public class Link {
         n2 = node2;
     }
 
+    public Link(){
+        n1 = null;
+        n2 = null;
+    }
+
     public List<Node> getNodes() {
         List<Node> toReturn = new ArrayList<>();
         toReturn.add(n1);
@@ -26,6 +31,7 @@ public class Link {
 
     @Override
     public boolean equals(Object obj) {
+        if(n1 == null || n2 == null)return false;
         try {
              Link l = (Link) obj;
              if((l.n1.equals(n1) || l.n1.equals(n2))
