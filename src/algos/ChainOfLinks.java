@@ -6,11 +6,11 @@ import graph.Node;
 import java.util.ArrayList;
 import java.util.List;
 
-public class chainOfLinks implements Comparable{
+public class ChainOfLinks implements Comparable{
     List<Node> nodes = new ArrayList<>();
     Node extremum[] = new Node[2];
 
-    chainOfLinks(Link l){
+    ChainOfLinks(Link l){
         List<Node> n = l.getNodes();
         extremum[0] = n.get(0);
         extremum[1] = n.get(1);
@@ -22,7 +22,7 @@ public class chainOfLinks implements Comparable{
         nodes.add(n);
     }
 
-    boolean addChain(chainOfLinks l){
+    boolean addChain(ChainOfLinks l){
         Node[] n = l.getExtremum();
         if (n[0].equals(extremum[1]) && n[1].equals(extremum[0])){
             return false;
@@ -53,10 +53,10 @@ public class chainOfLinks implements Comparable{
 
     @Override
     public int compareTo(Object o) {
-        if(!(o instanceof chainOfLinks))throw new UnsupportedOperationException();
+        if(!(o instanceof ChainOfLinks))throw new UnsupportedOperationException();
 
-        if(this.nodes.size()<((chainOfLinks) o).nodes.size())return -1;
-        else if (this.nodes.size()<((chainOfLinks) o).nodes.size())return 1;
+        if(this.nodes.size()<((ChainOfLinks) o).nodes.size())return -1;
+        else if (this.nodes.size()<((ChainOfLinks) o).nodes.size())return 1;
         else return 0;
     }
 }

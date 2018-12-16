@@ -4,13 +4,12 @@ import generator.ProblemGenerator;
 import graph.Link;
 import graph.Node;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Algo2 extends Algos {
 
-    ArrayList<chainOfLinks> reusable = new ArrayList<>();
+    ArrayList<ChainOfLinks> reusable = new ArrayList<>();
     public Algo2(ProblemGenerator pbg) {
         super(pbg);
     }
@@ -23,7 +22,7 @@ public class Algo2 extends Algos {
             do {
                 reusable = new ArrayList<>();
                 computeReusable(C);
-                reusable.sort(chainOfLinks::compareTo);
+                reusable.sort(ChainOfLinks::compareTo);
                 if (reusable.size() > 0) {
                     C.removeAll(reusable.get(0).nodes);
                     C.add(reusable.get(0).extremum[1]);
@@ -45,7 +44,7 @@ public class Algo2 extends Algos {
                 for (int j = i + 1; j < C.size(); j++) {
                     Link l = new Link(C.get(i), C.get(j));
                     if (links.contains(l)) {
-                        reusable.add(new chainOfLinks(l));
+                        reusable.add(new ChainOfLinks(l));
                     }
                 }
             }

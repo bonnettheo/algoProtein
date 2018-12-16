@@ -2,6 +2,7 @@ package generator;
 
 import algos.Algo1;
 import algos.Algo2;
+import algos.Algo3;
 import algos.Algos;
 
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ public class ResultsGenerator {
 
     public int nbrExec = 1000;
     Algos a;
-    private boolean algoChoice;
+    private int algoChoice;
     public ResultsGenerator(){}
 
     /**
@@ -19,7 +20,7 @@ public class ResultsGenerator {
      * @param algo choose algo1 if true else algo2
      * @return
      */
-    public List<Double> computeResults(boolean algo){
+    public List<Double> computeResults(int algo){
         algoChoice = algo;
         List<Double> table = new ArrayList<>();
         for(int p = 2; p <= 10; p++){
@@ -35,10 +36,12 @@ public class ResultsGenerator {
         List<Double> valuesFound = new ArrayList<>();
         for (int i =0; i<nbrExec; i++){
             ProblemGenerator pbg = new ProblemGenerator(100,p,t);
-            if(algoChoice){
+            if(algoChoice == 1){
                 a = new Algo1(pbg);
-            }else{
+            }else if(algoChoice == 2){
                 a = new Algo2(pbg);
+            }else if(algoChoice == 3){
+                a = new Algo3(pbg);
             }
             a.computeSolution();
             valuesFound.add((double)a.getNbrLinks());
