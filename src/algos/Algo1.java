@@ -16,7 +16,6 @@ public class Algo1 extends Algos{
     public void computeSolution() {
         // parcour chaque C et lient les noeuds entre eux dans l'ordre trouvé sauf si le lien existe deja
         for(List<Node> C : Cs){
-            List<Link> reusable = new ArrayList<>();
 
             for(int i = 0; i < C.size()-1; ++i){
                 Link l = new Link(C.get(i),C.get(i+1));

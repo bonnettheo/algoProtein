@@ -17,11 +17,6 @@ public class Link {
         n2 = node2;
     }
 
-    public Link(){
-        n1 = null;
-        n2 = null;
-    }
-
     public List<Node> getNodes() {
         List<Node> toReturn = new ArrayList<>();
         toReturn.add(n1);
